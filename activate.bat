@@ -1,3 +1,3 @@
-call C:\Python37\PyEnv.bat
+call %~d0\local\eSEAT\setup.bat
 
 rtcmd activate ConsoleIn0 ConsoleOut0
