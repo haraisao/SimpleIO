@@ -4,6 +4,7 @@
 
 from __future__ import print_function
 import sys
+import readline
 
 import RTC
 import OpenRTM_aist
@@ -93,8 +94,8 @@ class ConsoleIn(OpenRTM_aist.DataFlowComponentBase):
         
   def onExecute(self, ec_id):
     print("Please input string: ",end="")
-    data = raw_input()
-    self._data.data = data
+    data = input()
+    self._data.data = data.encode().decode('unicode_escape')
     
     OpenRTM_aist.setTimestamp(self._data)
     print("Sending to subscriber: ", data, self._data.data)
